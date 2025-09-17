@@ -1,0 +1,66 @@
+/* current palet: https://coolors.co/e9d758-297373-ff8552-e6e6e6-39393a */
+body{
+    background-color:#FF8552;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+img {
+    display: block;
+}
+
+.left-half, .right-half {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.right-half {
+    background-color:#FF8552;
+}
+.left-3 {
+    width: 90%;
+    height: 50%;
+    padding: 10px;
+    border: 5px solid gray;
+    margin: 0;
+}
+
+
+h1 {
+    color:#39393A;
+    font-size: small;
+    font-family: "times new roman", times, serif;
+
+}
+h2 {
+    color:#E9D758;
+    font-size: large;
+}
+h3{
+    color:#297373;
+    font-size: medium;
+}
+
+p {
+    color:#39393A;
+    font-size: small;
+    font-family: "times new roman", times, serif;
+}
+
+button {
+    background-color:#E9D758;
+    border: none;
+    color: #39393A;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: small;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 0px;
+}
