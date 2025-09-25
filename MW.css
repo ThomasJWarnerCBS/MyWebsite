@@ -124,7 +124,7 @@ img {
     background-color: #FF8552;
 }
 
-.left-3 {
+.left-3, .experience {
     width: 90%;
     height: 50%;
     padding: 10px;
@@ -166,4 +166,15 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 0px;
+}
+
+/* Add smooth scrolling behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Adjust scroll target to account for fixed navbar */
+#aboutme,
+#experience {
+    scroll-margin-top: 100px; /* Adds space above the target when scrolling */
 }
