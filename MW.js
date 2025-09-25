@@ -7,13 +7,13 @@ function showExperience(role) {
     document.getElementById("experience-content").innerHTML = content[role] || "<p>Select a role to see experience details.</p>";
 }
 
-// Photo slideshow functionality
+// Photo slideshow functionality - FIXED FILE EXTENSIONS
 const photoSlideshow = {
     photos: [
-        'Images/ProfilPics/photo1.jpg',
-        'Images/ProfilPics/photo2.jpg', 
-        'Images/ProfilPics/photo3.jpg',
-        'Images/ProfilPics/photo4.jpg'
+        'Images/ProfilPics/photo1.png',  // Changed from .jpg to .png
+        'Images/ProfilPics/photo2.png',  // Changed from .jpg to .png
+        'Images/ProfilPics/photo3.png',  // Changed from .jpg to .png
+        'Images/ProfilPics/photo4.png'   // Changed from .jpg to .png
     ],
     currentIndex: 0,
     intervalId: null,
