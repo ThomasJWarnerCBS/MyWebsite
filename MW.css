@@ -8,7 +8,10 @@
 
 body {
     background-color: #FF8552;
-    font-family: "Times New Roman", Times, serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Navigation Styles */
@@ -25,6 +28,7 @@ body {
     right: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
 }
 
 .logo {
@@ -33,9 +37,10 @@ body {
 
 .logo-text {
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 600; /* SF font weight */
     color: #E9D758;
     letter-spacing: -0.5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
 }
 
 .nav-menu {
@@ -49,6 +54,7 @@ body {
     color: #E6E6E6;
     text-decoration: none;
     transition: color 0.3s ease;
+    font-weight: 400;
 }
 
 .nav-link:hover {
@@ -70,6 +76,7 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
     white-space: nowrap;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
 }
 
 .nav-button:hover {
@@ -132,28 +139,48 @@ img {
     margin: 0;
 }
 
+/* Apple SF Font for all headings */
+h1, h2, h3, h4, h5, h6 {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+    -webkit-font-smoothing: antialiased;
+}
+
 h1 {
     color: #39393A;
-    font-size: small;
-    font-family: "Times New Roman", Times, serif;
+    font-size: 0.875rem; /* 14px equivalent */
+    font-weight: 400;
 }
 
 h2 {
     color: #E9D758;
-    font-size: large;
+    font-size: 1.25rem; /* 20px equivalent */
+    font-weight: 600;
 }
 
 h3 {
     color: #297373;
-    font-size: medium;
+    font-size: 1rem; /* 16px equivalent */
+    font-weight: 500;
 }
 
-p {
+h4 {
+    color: #297373;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Apple SF Font for all text */
+p, li {
     color: #39393A;
-    font-size: small;
-    font-family: "Times New Roman", Times, serif;
+    font-size: 0.875rem; /* 14px equivalent */
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    line-height: 1.5; /* Apple's preferred line height */
+    font-weight: 400;
 }
 
+/* Apple SF Font for buttons */
 button {
     background-color: #E9D758;
     border: none;
@@ -162,10 +189,27 @@ button {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: small;
+    font-size: 0.875rem;
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    font-weight: 500;
+    transition: all 0.2s ease; /* Apple-style quick transitions */
+}
+
+button:hover {
+    background-color: #d4bc4a;
+    transform: translateY(-1px); /* Subtle lift effect */
+}
+
+/* Apple SF Font for lists */
+ul, ol {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+}
+
+ul li {
+    margin-bottom: 0.25rem;
 }
 
 /* Add smooth scrolling behavior */
@@ -201,4 +245,31 @@ html {
 .photo-slideshow:hover img {
     transform: scale(1.02);
     transition: transform 0.3s ease, opacity 0.5s ease-in-out;
+}
+
+/* Apple-style content sections */
+.aboutme, .experience {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+}
+
+/* Experience content styling */
+#experience-content {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    margin-top: 1rem;
+}
+
+#experience-content h4 {
+    color: #297373;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+#experience-content ul {
+    padding-left: 1.25rem;
+}
+
+#experience-content li {
+    color: #39393A;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
