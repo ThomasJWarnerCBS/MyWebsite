@@ -6,3 +6,72 @@ function showExperience(role) {
     };
     document.getElementById("experience-content").innerHTML = content[role] || "<p>Select a role to see experience details.</p>";
 }
+
+// Photo slideshow functionality
+const photoSlideshow = {
+    photos: [
+        'Images/ProfilPics/photo1.jpg',
+        'Images/ProfilPics/photo2.jpg', 
+        'Images/ProfilPics/photo3.jpg',
+        'Images/ProfilPics/photo4.jpg'
+    ],
+    currentIndex: 0,
+    intervalId: null,
+
+    // Initialize the slideshow when page loads
+    init() {
+        this.startSlideshow();
+    },
+
+    // Change to next photo
+    nextPhoto() {
+        this.currentIndex = (this.currentIndex + 1) % this.photos.length;
+        this.updatePhoto();
+    },
+
+    // Update the image source
+    updatePhoto() {
+        const imageElement = document.getElementById('profile-image');
+        if (imageElement) {
+            imageElement.src = this.photos[this.currentIndex];
+            // Add fade transition effect
+            imageElement.style.opacity = '0';
+            setTimeout(() => {
+                imageElement.style.opacity = '1';
+            }, 100);
+        }
+    },
+
+    // Start automatic slideshow
+    startSlideshow() {
+        // Change photo every 3 seconds (3000ms)
+        this.intervalId = setInterval(() => {
+            this.nextPhoto();
+        }, 3000);
+    },
+
+    // Stop slideshow (useful for hover effects)
+    stopSlideshow() {
+        if (this.intervalId) {
+            clearInterval(this.intervalId);
+            this.intervalId = null;
+        }
+    }
+};
+
+// Start slideshow when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    photoSlideshow.init();
+    
+    // Optional: Pause slideshow on hover, resume when not hovering
+    const photoContainer = document.querySelector('.photo-slideshow');
+    if (photoContainer) {
+        photoContainer.addEventListener('mouseenter', () => {
+            photoSlideshow.stopSlideshow();
+        });
+        
+        photoContainer.addEventListener('mouseleave', () => {
+            photoSlideshow.startSlideshow();
+        });
+    }
+});
