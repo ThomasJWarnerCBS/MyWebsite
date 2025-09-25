@@ -41,30 +41,105 @@
         </nav>
 
         <!-- Main body -->
-        <div class="container">
-            <div class="left-half">
-
-                <div id="aboutme" class="aboutme">
-                    <h3>About Me</h3>
-                    <p>Hi, I’m Thomas Warner 👋 <br>
-                    I’m passionate about building digital solutions that are both useful and intuitive.
-                    My main focus is programming and full-stack development, where I enjoy working with everything from databases and backend logic to clean and responsive frontends. <br><br>
-                    I’m currently studying HA(IT) at Copenhagen Business School, where I’m combining technical skills with business and management.
-                    Alongside my studies, I’m developing projects that let me experiment, learn, and turn ideas into working applications. <br> <br>
-                    This site is a small corner of the internet where I share a bit about myself, my experience, and some of the projects I’m working on. <br><br><br>
+        <div class="main-content">
+            <!-- Top section with about me, experience, and slideshow -->
+            <div class="container">
+                <div class="left-half">
+                    <div id="aboutme" class="aboutme">
+                        <h3>About Me</h3>
+                        <p>Hi, I'm Thomas Warner 👋</p>
+                        <p>I'm passionate about building digital solutions that are both useful and intuitive. My main focus is programming and full-stack development, where I enjoy working with everything from databases and backend logic to clean and responsive frontends.</p>
+                        <p>I'm currently studying HA(IT) at Copenhagen Business School, where I'm combining technical skills with business and management insight. Alongside my studies, I'm developing projects that let me experiment, learn, and turn ideas into working applications.</p>
+                        <p>This site is a small corner of the internet where I share a bit about myself, my experience, and some of the projects I'm working on.</p>
+                    </div>
+                    
+                    <div id="experience" class="experience">
+                        <h3>Experience</h3>
+                        <button onmouseover="showExperience('Databases')">Databases</button>
+                        <button onmouseover="showExperience('support')">Support</button>
+                        <button onmouseover="showExperience('programming')">Programming</button>
+                        <div id="experience-content"></div>
+                    </div>
                 </div>
-                
-                <div id="experience" class="experience">
-                    <h3>Experience</h3>
-                    <button onmouseover="showExperience('Databases')">Databases</button>
-                    <button onmouseover="showExperience('support')">Support</button>
-                    <button onmouseover="showExperience('programming')">Programming</button>
-                    <div id="experience-content"></div>
+                <div class="right-half">
+                    <div class="photo-slideshow">
+                        <img id="profile-image" src="Images/ProfilPics/photo1.png" alt="Picture of Thomas Warner">
+                    </div>
                 </div>
             </div>
-            <div class="right-half">
-                <div class="photo-slideshow">
-                    <img id="profile-image" src="Images/ProfilPics/photo1.png" alt="Picture of Thomas Warner">
+
+            <!-- Full-width Projects section -->
+            <div id="projects" class="projects-section">
+                <div class="projects-container">
+                    <h2>Projects</h2>
+                    <p>Here are some of the projects I've been working on:</p>
+                    
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <h4>Project 1</h4>
+                            <p>Description of your first project goes here. What technologies did you use? What problem did it solve?</p>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h4>Project 2</h4>
+                            <p>Description of your second project. Maybe include links to GitHub repos or live demos.</p>
+                        </div>
+                        
+                        <div class="project-card">
+                            <h4>Project 3</h4>
+                            <p>Another project description. This could be a work project, personal project, or school assignment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full-width Book Club section -->
+            <div id="book-club" class="book-club-section">
+                <div class="book-club-container">
+                    <h2>Book Club</h2>
+                    <p>Exploring ideas through reading and discussion</p>
+                    
+                    <div class="book-club-content">
+                        <div class="current-book">
+                            <h3>Currently Reading</h3>
+                            <div class="book-display">
+                                <div class="book-info">
+                                    <h4>"The Pragmatic Programmer"</h4>
+                                    <p class="book-author">by David Thomas & Andrew Hunt</p>
+                                    <p class="book-description">A foundational book for any developer looking to improve their craft. Covers everything from code organization to career development.</p>
+                                    <div class="reading-progress">
+                                        <div class="progress-bar">
+                                            <div class="progress-fill" style="width: 65%;"></div>
+                                        </div>
+                                        <span class="progress-text">65% complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="recent-books">
+                            <h3>Recently Finished</h3>
+                            <div class="books-grid">
+                                <div class="book-card">
+                                    <h4>"Clean Code"</h4>
+                                    <p class="book-author">by Robert C. Martin</p>
+                                    <p>Essential principles for writing maintainable, readable code.</p>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>"Atomic Habits"</h4>
+                                    <p class="book-author">by James Clear</p>
+                                    <p>How small changes compound into remarkable results.</p>
+                                </div>
+                                
+                                <div class="book-card">
+                                    <h4>"System Design Interview"</h4>
+                                    <p class="book-author">by Alex Xu</p>
+                                    <p>Comprehensive guide to tackling system design problems.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

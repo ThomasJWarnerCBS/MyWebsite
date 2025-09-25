@@ -111,10 +111,14 @@ body {
 }
 
 /* Main Content Styles - Updated to account for fixed navbar */
+.main-content {
+    margin-top: 80px; /* Space for fixed navbar */
+}
+
 .container {
     display: flex;
     height: 100vh;
-    margin-top: 80px; /* Space for fixed navbar */
+    margin-top: 0; /* Remove margin since main-content handles it */
 }
 
 img {
@@ -223,6 +227,12 @@ html {
     scroll-margin-top: 100px; /* Adds space above the target when scrolling */
 }
 
+/* Update scroll margin for projects section */
+#projects,
+#book-club {
+    scroll-margin-top: 100px;
+}
+
 /* Photo slideshow styles - Updated to align shorter photos to top */
 .photo-slideshow {
     width: 100%;
@@ -302,4 +312,249 @@ html {
     color: #39393A;
     line-height: 1.6;
     margin-bottom: 0.5rem;
+}
+
+/* Full-width Projects section */
+.projects-section {
+    width: 100%;
+    background-color: #E6E6E6; /* Light background to differentiate */
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+}
+
+.projects-container {
+    max-width: 1200px; /* Limit content width for readability */
+    margin: 0 auto; /* Center the content */
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+}
+
+.projects-section h2 {
+    color: #297373;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.projects-section p {
+    color: #39393A;
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Projects grid layout */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: #FFFFFF;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.project-card h4 {
+    color: #297373;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: #39393A;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: left;
+    margin-bottom: 0;
+}
+
+/* Full-width Book Club section */
+.book-club-section {
+    width: 100%;
+    background-color: #297373; /* Using your teal color for variation */
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+}
+
+.book-club-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+}
+
+.book-club-section h2 {
+    color: #E9D758; /* Yellow for contrast against teal background */
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.book-club-section > .book-club-container > p {
+    color: #E6E6E6; /* Light text for readability */
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.book-club-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+/* Current Book Section */
+.current-book h3,
+.recent-books h3 {
+    color: #E9D758;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.book-display {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.book-info h4 {
+    color: #E6E6E6;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.book-author {
+    color: #E9D758;
+    font-size: 1rem;
+    font-style: italic;
+    margin-bottom: 1rem !important;
+}
+
+.book-description {
+    color: #E6E6E6;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Reading Progress Bar */
+.reading-progress {
+    margin-top: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #E9D758;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    color: #E6E6E6;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+/* Recent Books Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.book-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.book-card h4 {
+    color: #E6E6E6;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.book-card .book-author {
+    color: #E9D758;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem !important;
+}
+
+.book-card p:not(.book-author) {
+    color: #E6E6E6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+/* Responsive design for projects */
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 2rem 1rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .projects-section h2 {
+        font-size: 1.75rem;
+    }
+}
+
+/* Responsive design for book club */
+@media (max-width: 768px) {
+    .book-club-section {
+        padding: 2rem 1rem;
+    }
+    
+    .book-club-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .book-club-section h2 {
+        font-size: 1.75rem;
+    }
+    
+    .current-book h3,
+    .recent-books h3 {
+        font-size: 1.25rem;
+    }
 }
