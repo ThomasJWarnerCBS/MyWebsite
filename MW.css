@@ -135,12 +135,105 @@ img {
     background-color: #FF8552;
 }
 
+/* Remove old experience styles and add new full-width experience section */
 .left-3, .experience {
-    width: 90%;
-    height: 50%;
-    padding: 10px;
-    border: 5px solid gray;
+    /* Remove or comment out old styles */
+}
+
+/* Full-width Experience section */
+.experience-section {
+    width: 100%;
+    background-color: #39393A; /* Dark background for variation */
+    padding: 4rem 2rem;
+    box-sizing: border-box;
+}
+
+.experience-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+}
+
+.experience-section h2 {
+    color: #E9D758; /* Yellow for contrast against dark background */
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.experience-section > .experience-container > p {
+    color: #E6E6E6; /* Light text for readability */
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Experience grid layout */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.experience-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.experience-card:hover {
+    transform: translateY(-4px);
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.experience-card h4 {
+    color: #E9D758;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.experience-card > p {
+    color: #E6E6E6;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Experience details (initially hidden) */
+.experience-details {
+    display: none;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(233, 215, 88, 0.3);
+}
+
+.experience-details.active {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.experience-details ul {
     margin: 0;
+    padding-left: 1.25rem;
+}
+
+.experience-details li {
+    color: #E6E6E6;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
 
 /* Apple SF Font for all headings */
@@ -556,5 +649,21 @@ html {
     .current-book h3,
     .recent-books h3 {
         font-size: 1.25rem;
+    }
+}
+
+/* Responsive design for experience */
+@media (max-width: 768px) {
+    .experience-section {
+        padding: 2rem 1rem;
+    }
+    
+    .experience-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .experience-section h2 {
+        font-size: 1.75rem;
     }
 }

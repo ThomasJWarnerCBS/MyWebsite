@@ -42,30 +42,54 @@
 
         <!-- Main body -->
         <div class="main-content">
-            <!-- Top section with about me, experience, and slideshow -->
+            <!-- Top section with just about me and slideshow -->
             <div class="container">
                 <div class="left-half">
                     <div id="aboutme" class="aboutme">
                         <h3>About Me</h3>
                         <p>Hi, I'm Thomas 👋</p>
                         <p>Half Faroese, half English, living in Copenhagen and studying Business & IT at CBS. <br>
-I love turning small ideas into real, tangible things — whether that’s a portfolio website or a wooden bench that fits perfectly in my corridor.<br><br>
-I’m creative, friendly, & patient, and usually the one people come to when they hit frustration — I always aim to make things feel lighter, not harder.<br><br>
-Right now, I’m building this site to help me land a student job where I can learn, grow, and be mentored as a developer.</p>
-                        
-                    </div>
-                    
-                    <div id="experience" class="experience">
-                        <h3>Experience</h3>
-                        <button onmouseover="showExperience('Databases')">Databases</button>
-                        <button onmouseover="showExperience('support')">Support</button>
-                        <button onmouseover="showExperience('programming')">Programming</button>
-                        <div id="experience-content"></div>
+I love turning small ideas into real, tangible things — whether that's a portfolio website or a wooden bench that fits perfectly in my corridor.<br><br>
+I'm creative, friendly, & patient, and usually the one people come to when they hit frustration — I always aim to make things feel lighter, not harder.<br><br>
+Right now, I'm building this site to help me land a student job where I can learn, grow, and be mentored as a developer.</p>
                     </div>
                 </div>
                 <div class="right-half">
                     <div class="photo-slideshow">
                         <img id="profile-image" src="Images/ProfilPics/photo1.png" alt="Picture of Thomas Warner">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full-width Experience section -->
+            <div id="experience" class="experience-section">
+                <div class="experience-container">
+                    <h2>Experience</h2>
+                    <p>My background in technology and problem-solving</p>
+                    
+                    <div class="experience-grid">
+                        <div class="experience-card" onmouseenter="showExperience('programming')" onclick="showExperience('programming')">
+                            <h4>Programming</h4>
+                            <p>Click to learn more about my programming experience</p>
+                            <div class="experience-details" id="programming-details">
+                                <ul>
+                                    <li>Developed web applications using JavaScript, HTML, and CSS</li>
+                                    <li>Have experience with Python</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="experience-card" onmouseenter="showExperience('Databases')" onclick="showExperience('Databases')">
+                            <h4>Database Management</h4>
+                            <p>Click to learn more about my database experience</p>
+                            <div class="experience-details" id="databases-details">
+                                <ul>
+                                    <li>Extensive history of database management</li>
+                                    <li>Azure SQL Databases</li>
+                                    <li>At least 3rd Form Normalisation - optionally 4th and 5th</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
