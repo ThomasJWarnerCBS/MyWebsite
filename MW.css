@@ -326,12 +326,12 @@ html {
     scroll-margin-top: 100px;
 }
 
-/* Photo slideshow styles - Updated to align shorter photos to top */
+/* Photo display styles - Static image only */
 .photo-slideshow {
     width: 100%;
     height: 100%;
     display: flex;
-    align-items: flex-start; /* Changed from 'center' to 'flex-start' for top alignment */
+    align-items: flex-start; /* Top alignment */
     justify-content: center;
 }
 
@@ -340,7 +340,6 @@ html {
     max-height: 100%;
     object-fit: cover;
     border-radius: 8px;
-    transition: opacity 0.5s ease-in-out;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
