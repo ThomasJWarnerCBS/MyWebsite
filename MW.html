@@ -136,41 +136,280 @@ Right now, I'm building this site to help me land a student job where I can lear
                     <div class="book-club-content">
                         <div class="current-book">
                             <h3>Currently Reading</h3>
-                            <div class="book-display">
-                                <div class="book-info">
-                                    <h4>"The Pragmatic Programmer"</h4>
-                                    <p class="book-author">by David Thomas & Andrew Hunt</p>
-                                    <p class="book-description">A foundational book for any developer looking to improve their craft. Covers everything from code organization to career development.</p>
-                                    <div class="reading-progress">
-                                        <div class="progress-bar">
-                                            <div class="progress-fill" style="width: 42%;"></div>
+                            
+                            <!-- Goodreads Currently Reading Widget Integration -->
+                            <div class="goodreads-current-widget-container">
+                                <!-- Show static HTML/CSS as a placeholder in case js is not enabled - javascript include will override this if things work -->
+                                <style type="text/css" media="screen">
+                                .gr_custom_container_1761824570 {
+                                    /* customize your Goodreads widget container here*/
+                                    border: none;
+                                    border-radius: 12px;
+                                    padding: 0;
+                                    background-color: transparent;
+                                    color: #E6E6E6;
+                                    width: 100%;
+                                }
+                                .gr_custom_header_1761824570 {
+                                    /* customize your Goodreads header here*/
+                                    display: none; /* Hide the default header since we have our own */
+                                }
+                                .gr_custom_each_container_1761824570 {
+                                    /* customize each individual book container here */
+                                    width: 100%;
+                                    clear: both;
+                                    margin-bottom: 0;
+                                    overflow: auto;
+                                    padding: 2rem;
+                                    border: 1px solid rgba(255, 255, 255, 0.2);
+                                    border-radius: 12px;
+                                    background-color: rgba(255, 255, 255, 0.1);
+                                    backdrop-filter: blur(10px);
+                                    transition: transform 0.2s ease, background-color 0.2s ease;
+                                }
+                                .gr_custom_each_container_1761824570:hover {
+                                    transform: translateY(-2px);
+                                    background-color: rgba(255, 255, 255, 0.15);
+                                }
+                                .gr_custom_book_container_1761824570 {
+                                    /* customize your book covers here */
+                                    overflow: hidden;
+                                    height: 120px;
+                                    float: left;
+                                    margin-right: 1.5rem;
+                                    width: 90px;
+                                    border-radius: 4px;
+                                }
+                                .gr_custom_book_container_1761824570 img {
+                                    border-radius: 4px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                                    width: 90px;
+                                    height: 120px;
+                                    object-fit: cover;
+                                }
+                                .gr_custom_title_1761824570 {
+                                    font-size: 1.25rem;
+                                    font-weight: 600;
+                                    margin-bottom: 0.5rem;
+                                    line-height: 1.4;
+                                }
+                                .gr_custom_title_1761824570 a {
+                                    color: #E6E6E6;
+                                    text-decoration: none;
+                                    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+                                }
+                                .gr_custom_title_1761824570 a:hover {
+                                    color: #E9D758;
+                                }
+                                .gr_custom_author_1761824570 {
+                                    /* customize your author names here */
+                                    font-size: 1rem;
+                                    color: #E9D758;
+                                    font-style: italic;
+                                    margin-bottom: 1rem;
+                                    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+                                }
+                                .gr_custom_author_1761824570 a {
+                                    color: #E9D758;
+                                    text-decoration: none;
+                                }
+                                .gr_custom_tags_1761824570 {
+                                    /* customize your tags here */
+                                    display: none; /* Hide tags for currently reading */
+                                }
+                                .gr_custom_rating_1761824570 {
+                                    /* customize your rating stars here */
+                                    display: none; /* Hide rating stars for currently reading */
+                                }
+                                /* Hide goodreads branding */
+                                .gr_custom_container_1761824570 center {
+                                    display: none;
+                                }
+                                </style>
+
+                                <div id="gr_custom_widget_1761824570">
+                                    <div class="gr_custom_container_1761824570">
+                                        <h2 class="gr_custom_header_1761824570">
+                                            <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/194518716-thomas?shelf=currently-reading&amp;utm_medium=api&amp;utm_source=custom_widget">Thomas&#39;s bookshelf: currently-reading</a>
+                                        </h2>
+                                        <div class="gr_custom_each_container_1761824570">
+                                            <div class="gr_custom_book_container_1761824570">
+                                                <a title="Gentle and Lowly: The Heart of Christ for Sinners and Sufferers" rel="nofollow" href="https://www.goodreads.com/review/show/8031718691?utm_medium=api&amp;utm_source=custom_widget"><img alt="Gentle and Lowly: The Heart of Christ for Sinners and Sufferers" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1571689979l/52891090._SX50_SY75_.jpg" /></a>
+                                            </div>
+                                            <div class="gr_custom_rating_1761824570">
+                                                <span class=" staticStars notranslate"><img src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+                                            </div>
+                                            <div class="gr_custom_title_1761824570">
+                                                <a rel="nofollow" href="https://www.goodreads.com/review/show/8031718691?utm_medium=api&amp;utm_source=custom_widget">Gentle and Lowly: The Heart of Christ for Sinners and Sufferers</a>
+                                            </div>
+                                            <div class="gr_custom_author_1761824570">
+                                                by <a rel="nofollow" href="https://www.goodreads.com/author/show/6156309.Dane_C_Ortlund">Dane C. Ortlund</a>
+                                            </div>
+                                            <div class="gr_custom_tags_1761824570">
+                                                tagged: currently-reading
+                                            </div>
                                         </div>
-                                        <span class="progress-text">42% complete</span>
+                                        <br style="clear: both"/>
+                                        <center>
+                                            <a rel="nofollow" href="https://www.goodreads.com/"><img alt="goodreads.com" style="border:0" src="https://s.gr-assets.com/images/widget/widget_logo.gif" /></a>
+                                        </center>
+                                        <noscript>
+                                            Share <a rel="nofollow" href="https://www.goodreads.com/">book reviews</a> and ratings with Thomas, and even join a <a rel="nofollow" href="https://www.goodreads.com/group">book club</a> on Goodreads.
+                                        </noscript>
                                     </div>
                                 </div>
+                                <script src="https://www.goodreads.com/review/custom_widget/194518716.Thomas's%20bookshelf:%20currently-reading?cover_position=left&cover_size=small&num_books=1&order=a&shelf=currently-reading&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_added&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1761824570&widget_text_color=000000&widget_title_size=medium&widget_width=medium" type="text/javascript" charset="utf-8"></script>
                             </div>
                         </div>
                         
                         <div class="recent-books">
                             <h3>Recently Finished</h3>
-                            <div class="books-grid">
-                                <div class="book-card">
-                                    <h4>"Clean Code"</h4>
-                                    <p class="book-author">by Robert C. Martin</p>
-                                    <p>Essential principles for writing maintainable, readable code.</p>
+                            
+                            <!-- Goodreads Widget Integration -->
+                            <div class="goodreads-widget-container">
+                                <!-- Show static HTML/CSS as a placeholder in case js is not enabled - javascript include will override this if things work -->
+                                <style type="text/css" media="screen">
+                                .gr_custom_container_1761823321 {
+                                    /* customize your Goodreads widget container here*/
+                                    border: none;
+                                    border-radius: 12px;
+                                    padding: 0;
+                                    background-color: transparent;
+                                    color: #E6E6E6;
+                                    width: 100%;
+                                }
+                                .gr_custom_header_1761823321 {
+                                    /* customize your Goodreads header here*/
+                                    display: none; /* Hide the default header since we have our own */
+                                }
+                                .gr_custom_each_container_1761823321 {
+                                    /* customize each individual book container here */
+                                    width: 100%;
+                                    clear: both;
+                                    margin-bottom: 1.5rem;
+                                    overflow: auto;
+                                    padding: 1.5rem;
+                                    border: 1px solid rgba(255, 255, 255, 0.2);
+                                    border-radius: 12px;
+                                    background-color: rgba(255, 255, 255, 0.1);
+                                    backdrop-filter: blur(10px);
+                                    transition: transform 0.2s ease, background-color 0.2s ease;
+                                }
+                                .gr_custom_each_container_1761823321:hover {
+                                    transform: translateY(-2px);
+                                    background-color: rgba(255, 255, 255, 0.15);
+                                }
+                                .gr_custom_book_container_1761823321 {
+                                    /* customize your book covers here */
+                                    overflow: hidden;
+                                    height: 80px;
+                                    float: left;
+                                    margin-right: 1rem;
+                                    width: 60px;
+                                    border-radius: 4px;
+                                }
+                                .gr_custom_book_container_1761823321 img {
+                                    border-radius: 4px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+                                }
+                                .gr_custom_title_1761823321 {
+                                    font-size: 1.1rem;
+                                    font-weight: 600;
+                                    margin-bottom: 0.5rem;
+                                }
+                                .gr_custom_title_1761823321 a {
+                                    color: #E6E6E6;
+                                    text-decoration: none;
+                                    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+                                }
+                                .gr_custom_title_1761823321 a:hover {
+                                    color: #E9D758;
+                                }
+                                .gr_custom_author_1761823321 {
+                                    /* customize your author names here */
+                                    font-size: 0.9rem;
+                                    color: #E9D758;
+                                    font-style: italic;
+                                    margin-bottom: 0.75rem;
+                                    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+                                }
+                                .gr_custom_author_1761823321 a {
+                                    color: #E9D758;
+                                    text-decoration: none;
+                                }
+                                .gr_custom_tags_1761823321 {
+                                    /* customize your tags here */
+                                    font-size: 0.8rem;
+                                    color: rgba(230, 230, 230, 0.7);
+                                }
+                                .gr_custom_rating_1761823321 {
+                                    /* customize your rating stars here */
+                                    float: right;
+                                    margin-top: 0.25rem;
+                                }
+                                /* Hide goodreads branding */
+                                .gr_custom_container_1761823321 center {
+                                    display: none;
+                                }
+                                </style>
+
+                                <div id="gr_custom_widget_1761823321">
+                                    <div class="gr_custom_container_1761823321">
+                                        <h2 class="gr_custom_header_1761823321">
+                                            <a style="text-decoration: none;" rel="nofollow" href="https://www.goodreads.com/review/list/194518716-thomas?shelf=read&amp;utm_medium=api&amp;utm_source=custom_widget">Thomas&#39;s bookshelf: read</a>
+                                        </h2>
+                                        <div class="gr_custom_each_container_1761823321">
+                                            <div class="gr_custom_book_container_1761823321">
+                                                <a title="The Screwtape Letters" rel="nofollow" href="https://www.goodreads.com/review/show/7981607335?utm_medium=api&amp;utm_source=custom_widget"><img alt="The Screwtape Letters" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1760782828l/8130077._SY75_.jpg" /></a>
+                                            </div>
+                                            <div class="gr_custom_rating_1761823321">
+                                                <span class=" staticStars notranslate" title="it was amazing"><img alt="it was amazing" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /></span>
+                                            </div>
+                                            <div class="gr_custom_title_1761823321">
+                                                <a rel="nofollow" href="https://www.goodreads.com/review/show/7981607335?utm_medium=api&amp;utm_source=custom_widget">The Screwtape Letters</a>
+                                            </div>
+                                            <div class="gr_custom_author_1761823321">
+                                                by <a rel="nofollow" href="https://www.goodreads.com/author/show/1069006.C_S_Lewis">C.S. Lewis</a>
+                                            </div>
+                                        </div>
+                                        <div class="gr_custom_each_container_1761823321">
+                                            <div class="gr_custom_book_container_1761823321">
+                                                <a title="The Lion, the Witch and the Wardrobe (Chronicles of Narnia, #1)" rel="nofollow" href="https://www.goodreads.com/review/show/7981607537?utm_medium=api&amp;utm_source=custom_widget"><img alt="The Lion, the Witch and the Wardrobe" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1697079942l/132080146._SY75_.jpg" /></a>
+                                            </div>
+                                            <div class="gr_custom_rating_1761823321">
+                                                <span class=" staticStars notranslate" title="it was amazing"><img alt="it was amazing" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /></span>
+                                            </div>
+                                            <div class="gr_custom_title_1761823321">
+                                                <a rel="nofollow" href="https://www.goodreads.com/review/show/7981607537?utm_medium=api&amp;utm_source=custom_widget">The Lion, the Witch and the Wardrobe</a>
+                                            </div>
+                                            <div class="gr_custom_author_1761823321">
+                                                by <a rel="nofollow" href="https://www.goodreads.com/author/show/1069006.C_S_Lewis">C.S. Lewis</a>
+                                            </div>
+                                        </div>
+                                        <div class="gr_custom_each_container_1761823321">
+                                            <div class="gr_custom_book_container_1761823321">
+                                                <a title="The Freedom of Self-Forgetfulness" rel="nofollow" href="https://www.goodreads.com/review/show/7981608204?utm_medium=api&amp;utm_source=custom_widget"><img alt="The Freedom of Self-Forgetfulness" border="0" src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1352949769l/13579364._SY75_.jpg" /></a>
+                                            </div>
+                                            <div class="gr_custom_rating_1761823321">
+                                                <span class=" staticStars notranslate" title="really liked it"><img alt="really liked it" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_active.png" /><img alt="" src="https://s.gr-assets.com/images/layout/gr_red_star_inactive.png" /></span>
+                                            </div>
+                                            <div class="gr_custom_title_1761823321">
+                                                <a rel="nofollow" href="https://www.goodreads.com/review/show/7981608204?utm_medium=api&amp;utm_source=custom_widget">The Freedom of Self-Forgetfulness</a>
+                                            </div>
+                                            <div class="gr_custom_author_1761823321">
+                                                by <a rel="nofollow" href="https://www.goodreads.com/author/show/847789.Timothy_J_Keller">Timothy J. Keller</a>
+                                            </div>
+                                        </div>
+                                        <br style="clear: both"/>
+                                        <center>
+                                            <a rel="nofollow" href="https://www.goodreads.com/"><img alt="goodreads.com" style="border:0" src="https://s.gr-assets.com/images/widget/widget_logo.gif" /></a>
+                                        </center>
+                                        <noscript>
+                                            Share <a rel="nofollow" href="https://www.goodreads.com/">book reviews</a> and ratings with Thomas, and even join a <a rel="nofollow" href="https://www.goodreads.com/group">book club</a> on Goodreads.
+                                        </noscript>
+                                    </div>
                                 </div>
-                                
-                                <div class="book-card">
-                                    <h4>"Atomic Habits"</h4>
-                                    <p class="book-author">by James Clear</p>
-                                    <p>How small changes compound into remarkable results.</p>
-                                </div>
-                                
-                                <div class="book-card">
-                                    <h4>"System Design Interview"</h4>
-                                    <p class="book-author">by Alex Xu</p>
-                                    <p>Comprehensive guide to tackling system design problems.</p>
-                                </div>
+                                <script src="https://www.goodreads.com/review/custom_widget/194518716.Thomas's%20bookshelf:%20read?cover_position=left&cover_size=small&num_books=3&order=a&shelf=read&show_author=1&show_cover=1&show_rating=1&show_review=1&show_tags=1&show_title=1&sort=date_added&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1761823321&widget_text_color=000000&widget_title_size=medium&widget_width=medium" type="text/javascript" charset="utf-8"></script>
                             </div>
                         </div>
                     </div>
