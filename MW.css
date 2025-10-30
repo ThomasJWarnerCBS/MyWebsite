@@ -110,15 +110,15 @@ body {
     }
 }
 
-/* Main Content Styles - Updated to account for fixed navbar */
+/* Main Content Styles - Updated to remove excessive spacing */
 .main-content {
     margin-top: 80px; /* Space for fixed navbar */
 }
 
 .container {
     display: flex;
-    height: 100vh;
-    margin-top: 0; /* Remove margin since main-content handles it */
+    min-height: 60vh; /* Changed from 100vh to min-height: 60vh */
+    padding-bottom: 2rem; /* Add some padding at the bottom */
 }
 
 img {
