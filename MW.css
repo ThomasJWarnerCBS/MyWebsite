@@ -166,6 +166,63 @@ body {
     color: #005582; /* Darker LinkedIn color on hover */
 }
 
+/* Logo and flags section */
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #E9D758;
+    letter-spacing: -0.5px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+}
+
+/* Language flags styling - Updated for emoji flags */
+.language-flags {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+}
+
+.flag-button {
+    background: none;
+    border: 2px solid transparent;
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem; /* Make emojis slightly larger */
+    line-height: 1;
+}
+
+.flag-button:hover {
+    border-color: rgba(233, 215, 88, 0.5);
+    background-color: rgba(233, 215, 88, 0.1);
+    transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.flag-button.active {
+    border-color: #E9D758;
+    background-color: rgba(233, 215, 88, 0.2);
+    transform: scale(1.05);
+}
+
+/* Remove old flag SVG styles */
+.flag {
+    /* No longer needed */
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .nav-menu {
@@ -183,6 +240,19 @@ body {
     
     .nav-button {
         padding: 0.875rem 1.5rem; /* Slightly smaller on mobile */
+    }
+    
+    .logo-section {
+        gap: 0.75rem;
+    }
+    
+    .language-flags {
+        gap: 0.5rem;
+    }
+    
+    .flag-button {
+        padding: 4px 6px;
+        font-size: 1.1rem; /* Slightly smaller on mobile */
     }
 }
 

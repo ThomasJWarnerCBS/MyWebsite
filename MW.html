@@ -14,9 +14,26 @@
     <body>
         <!-- Nav Bar -->
         <nav class="navbar">
-            <a href="/" class="logo">
-                <span class="logo-text">Thomas Warner</span>
-            </a>
+            <div class="logo-section">
+                <a href="/" class="logo">
+                    <span class="logo-text">Thomas Warner</span>
+                </a>
+                
+                <!-- Language Flags -->
+                <div class="language-flags">
+                    <button class="flag-button" onclick="switchLanguage('en')" title="English">
+                        🏴󠁧󠁢󠁥󠁮󠁧󠁿
+                    </button>
+                    
+                    <button class="flag-button" onclick="switchLanguage('fo')" title="Faroese">
+                        🇫🇴
+                    </button>
+                    
+                    <button class="flag-button" onclick="switchLanguage('da')" title="Danish">
+                        🇩🇰
+                    </button>
+                </div>
+            </div>
 
             <ul class="nav-menu">
                 <li><a href="#aboutme" class="nav-link">About me</a></li>
