@@ -77,36 +77,112 @@ body {
     transition: background-color 0.3s ease;
     white-space: nowrap;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    position: relative;
 }
 
 .nav-button:hover {
     background-color: #d4bc4a;
 }
 
-.mobile-menu-button {
+/* Dropdown content */
+.dropdown-content {
     display: none;
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    background-color: #FFFFFF;
+    min-width: 220px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-radius: 12px;
+    z-index: 1001;
+    border: 1px solid rgba(41, 115, 115, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    animation: dropdownFadeIn 0.3s ease-out;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+/* Dropdown items */
+.dropdown-item {
+    display: flex;
     align-items: center;
-    justify-content: center;
+    padding: 1rem 1.5rem;
+    color: #39393A;
+    text-decoration: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    border-radius: 0;
 }
 
-.hamburger {
-    background: none;
-    border: none;
-    cursor: pointer;
+.dropdown-item:hover {
+    background-color: #F5F5F5;
+    color: #297373;
 }
 
-/* Responsive Design */
+.dropdown-item:first-child {
+    border-radius: 12px 12px 0 0;
+}
+
+.dropdown-item:last-child {
+    border-radius: 0 0 12px 12px;
+}
+
+/* Navigation icons */
+.nav-icon {
+    margin-right: 0.75rem;
+    color: #297373;
+    flex-shrink: 0;
+    transition: color 0.2s ease;
+}
+
+.dropdown-item:hover .nav-icon {
+    color: #39393A;
+}
+
+/* LinkedIn icon */
+.linkedin-icon {
+    margin-right: 0.75rem;
+    color: #0077B5; /* LinkedIn brand color */
+    flex-shrink: 0;
+}
+
+.dropdown-item:hover .linkedin-icon {
+    color: #005582; /* Darker LinkedIn color on hover */
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none;
+        display: none; /* Hide the main navigation on mobile */
     }
     
-    .nav-button-container {
-        display: none;
+    .contact-dropdown {
+        display: flex; /* Show the dropdown on mobile */
     }
     
-    .mobile-menu-button {
-        display: flex;
+    .dropdown-content {
+        right: -1rem;
+        min-width: 200px;
+    }
+    
+    .nav-button {
+        padding: 0.875rem 1.5rem; /* Slightly smaller on mobile */
     }
 }
 

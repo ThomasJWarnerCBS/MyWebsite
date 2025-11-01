@@ -24,3 +24,33 @@ function showExperience(role) {
         }
     }
 }
+
+// Contact dropdown functionality
+function toggleContactDropdown() {
+    const dropdown = document.getElementById('dropdown-content');
+    const button = document.getElementById('contact-button');
+    
+    dropdown.classList.toggle('show');
+    button.classList.toggle('active');
+}
+
+// Close dropdown when clicking outside
+function closeDropdownOnClickOutside(event) {
+    const dropdown = document.getElementById('dropdown-content');
+    const button = document.getElementById('contact-button');
+    
+    if (!button.contains(event.target) && !dropdown.contains(event.target)) {
+        dropdown.classList.remove('show');
+        button.classList.remove('active');
+    }
+}
+
+// Initialize dropdown functionality when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const contactButton = document.getElementById('contact-button');
+    
+    if (contactButton) {
+        contactButton.addEventListener('click', toggleContactDropdown);
+        document.addEventListener('click', closeDropdownOnClickOutside);
+    }
+});
