@@ -17,9 +17,9 @@ body {
 /* Navigation Styles */
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1.5rem 2rem; /* Increased from 1rem to 1.5rem */
     background-color: rgba(41, 115, 115, 0.9);
     backdrop-filter: blur(10px);
     position: fixed;
@@ -29,50 +29,54 @@ body {
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, sans-serif;
+    height: 80px; /* Add explicit height */
 }
 
-.logo {
-    text-decoration: none;
+/* Position logo and contact button absolutely to keep them on the sides */
+.logo-section {
+    position: absolute;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: 600; /* SF font weight */
-    color: #E9D758;
-    letter-spacing: -0.5px;
-    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
+.nav-button-container {
+    position: absolute;
+    right: 2rem;
+    display: flex;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3rem; /* Increased from 2rem to 3rem for more spacing */
     font-weight: 500;
+    /* Remove the justify-content: center line as it's no longer needed */
 }
 
 .nav-link {
     color: #E6E6E6;
     text-decoration: none;
     transition: color 0.3s ease;
-    font-weight: 400;
+    font-weight: 500; /* Increased from 400 to 500 for bolder text */
+    font-size: 1.1rem; /* Increased from default to make text larger */
+    padding: 0.75rem 1rem; /* Add padding around links for more clickable area */
+    border-radius: 8px; /* Add subtle border radius */
 }
 
 .nav-link:hover {
     color: rgba(230, 230, 230, 0.9);
 }
 
-.nav-button-container {
-    display: flex;
-}
-
 .nav-button {
     background-color: #E9D758;
     color: #39393A;
     border: none;
-    padding: 1rem 2rem;
+    padding: 1.25rem 2.5rem; /* Increased from 1rem 2rem to 1.25rem 2.5rem */
     border-radius: 9999px;
-    font-weight: 500;
-    font-size: 1rem;
+    font-weight: 600; /* Increased from 500 to 600 */
+    font-size: 1.1rem; /* Increased from 1rem to 1.1rem */
     cursor: pointer;
     transition: background-color 0.3s ease;
     white-space: nowrap;
@@ -178,8 +182,8 @@ body {
 }
 
 .logo-text {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.75rem; /* Increased from 1.5rem to 1.75rem */
+    font-weight: 700; /* Increased from 600 to 700 */
     color: #E9D758;
     letter-spacing: -0.5px;
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', system-ui, sans-serif;
@@ -258,7 +262,7 @@ body {
 
 /* Main Content Styles - Updated to remove excessive spacing */
 .main-content {
-    margin-top: 80px; /* Space for fixed navbar */
+    margin-top: 100px; /* Increased from 80px to account for larger navbar */
 }
 
 .container {
